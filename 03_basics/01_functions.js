@@ -32,9 +32,10 @@ function addTwoNumber(number1, number2){
 const result = addTwoNumber(4, 6)
 console.log(result); //method 3
 
-function loginUserMessage(username){
-    if(username === undefined){
+function loginUserMessage(username){   //for default value we can use (username = "suraj"), now suraj will act as default value of username
+    if(!username){    // if(username === undefined)
         console.log("please enter username");
+        return
     }
     return `${username} just logged in...`
 }
