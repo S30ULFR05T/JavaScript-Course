@@ -24,3 +24,7 @@ console.log(addTwo(2, 4));
 const addTwo2 = (a, b) => a + b    // Implicit return
 console.log(addTwo2(2,5));
 
+
+
+// const myArray = [3,4,6,5,3]
+// myArray.forEach(()=>{})
