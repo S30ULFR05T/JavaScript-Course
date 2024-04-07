@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Part 4</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('python')
+    addLanguage("typescript")
+    // the above written code is not optimized because everytime we add new lanugage in function, it has to traverse all data to botton which is bad for large data
+
+    function addOptiLangugae(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLangugae("golang")
+    addOptiLangugae("c sharp")
+    // here the above written code is optimized because it doesn't have to traverse all data
+
+    //Editing values
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Nothing"     //This will change the written with s.no. 2
+    const newli = document.createElement('li')
+    newli.textContent = "Nothing2"
+    secondLang.replaceWith(newli)       //This is second method for editing data 
+
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>Nothin3</li>'        //This is method three
+
+
+    //remove
+    const lastLanguage = document.querySelector('li:last-child')
+    lastLanguage.remove()
+</script>
+</html>
